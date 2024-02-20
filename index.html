@@ -41,7 +41,10 @@
 
             font-size: 32px;
             font-weight: 900;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:'Courier New', Courier, monospace;
+        }
+        a {
+            font-size: 16px;
         }
         .container, [class^="project"], [class^="slide"] {
             height: 100vh;
@@ -65,45 +68,99 @@
         }
         [class^="slide"] {
             flex-shrink: 0;
-
+            position: relative;
             scroll-snap-align: center;
+        }
+        .top, .right, .bottom, .left {
+            position: absolute;
+        }
+        .top, .bottom {
+            left: 50%;
+            -webkit-transform: translate(-50%, 0%);
+            -moz-transform: translate(-50%, 0%);
+            -ms-transform: translate(-50%, 0%);
+            -o-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+        }
+        .top {
+            top: 0;
+        }
+        .bottom {
+            bottom: 0;
+        }
+        .left, .right {
+            top: 50%;
+            -webkit-transform: translate(0%, -50%);
+            -moz-transform: translate(0%, -50%);
+            -ms-transform: translate(0%, -50%);
+            -o-transform: translate(0%, -50%);
+            transform: translate(0%, -50%);
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            right: 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="project1">
-            <div class="slide1" id="bg1">
-                project 1, slide 1<br>
-                scroll down right left or up
+            <div class="slide1" id="project1slide1">
+                project 1, slide 1
+                <a class="right" href="#project1slide2">next slide</a>
+                <a class="bottom" href="#project2slide1">next project</a>
             </div>
-            <div class="slide2">
+            <div class="slide2" id="project1slide2">
                 project 1, slide 2
+                <a class="right" href="#project1slide3">next slide</a>
+                <a class="bottom" href="#project2slide1">next project</a>
+                <a class="left" href="#project1slide1">previous slide</a>
             </div>
-            <div class="slide3">
+            <div class="slide3" id="project1slide3">
                 project 1, slide 3
+                <a class="bottom" href="#project2slide1">next project</a>
+                <a class="left" href="#project1slide2">previous slide</a>
             </div>
         </div>
         <div class="project2">
-            <div class="slide1">
+            <div class="slide1" id="project2slide1">
                 project 2, slide 1
+                <a class="top" href="#project1slide1">previous project</a>
+                <a class="right" href="#project2slide2">next slide</a>
+                <a class="bottom" href="#project3slide1">next project</a>
             </div>
-            <div class="slide2">
+            <div class="slide2" id="project2slide2">
                 project 2, slide 2
+                <a class="top" href="#project1slide1">previous project</a>
+                <a class="right" href="#project2slide3">next slide</a>
+                <a class="bottom" href="#project3slide1">next project</a>
+                <a class="left" href="#project2slide1">previous slide</a>
             </div>
-            <div class="slide3">
+            <div class="slide3" id="project2slide3">
                 project 2, slide 3
+                <a class="top" href="#project1slide1">previous project</a>
+                <a class="bottom" href="#project3slide1">next project</a>
+                <a class="left" href="#project2slide2">previous slide</a>
             </div>
         </div>
         <div class="project3">
-            <div class="slide1">
+            <div class="slide1" id="project3slide1">
                 project 3, slide 1
+                <a class="top" href="#project2slide1">previous project</a>
+                <a class="right" href="#project3slide2">next slide</a>
             </div>
-            <div class="slide2">
+            <div class="slide2" id="project3slide2">
                 project 3, slide 2
+                <a class="top" href="#project2slide1">previous project</a>
+                <a class="right" href="#project3slide3">next slide</a>
+                <a class="left" href="#project3slide1">previous slide</a>
             </div>
-            <div class="slide3">
+            <div class="slide3" id="project3slide3">
                 project 3, slide 3
+                <a class="top" href="#project2slide1">previous project</a>
+                <a class="left" href="#project3slide2">previous slide</a>
             </div>
         </div>
     </div>
