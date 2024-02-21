@@ -60,14 +60,17 @@
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
             scroll-snap-align: center;
+            z-index: 0;
         }
         [class^="slide"] {
             flex-shrink: 0;
             position: relative;
             scroll-snap-align: center;
+            z-index: 1;
         }
         .top, .right, .bottom, .left {
             position: absolute;
+            z-index: 2;
         }
         .top, .bottom {
             left: 50%;
