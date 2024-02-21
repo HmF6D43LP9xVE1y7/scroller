@@ -8,8 +8,6 @@
             display: none;
         }
         * {
-            background-color: rgba(255, 0, 0, .2);
-            outline: 2px dashed black !important;
             padding: 0;
             margin: 0;
             border: 0;
@@ -39,17 +37,14 @@
             */
             color: rgba(0, 0, 0, 1);
 
-            font-size: 32px;
             font-weight: 900;
             font-family:'Courier New', Courier, monospace;
         }
-        a {
-            font-size: 16px;
-        }
+    
         .container, [class^="project"], [class^="slide"] {
             height: 100vh;
             width: 100vw;
-            background-image: url("https://placehold.co/20x20");
+            background-image: url("https://placehold.co/800x600");
             background-position: center;
             background-size: cover;
         }
@@ -102,6 +97,20 @@
         .right {
             right: 0;
         }
+        * {
+            background-color: rgba(255, 0, 0, .2);
+            outline: 2px dashed black !important;
+        }
+        @media only screen and (max-width: 767px) {
+            * {
+                font-size: 16px;
+            }
+        }
+        @media only screen and (min-width: 768px) {
+            * {
+                font-size: 32px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -109,58 +118,58 @@
         <div class="project1">
             <div class="slide1" id="project1slide1">
                 project 1, slide 1
-                <a class="right" href="#project1slide2">next slide</a>
-                <a class="bottom" href="#project2slide1">next project</a>
+                <a class="right" onclick="var element = document.getElementById('project1slide2'); element.scrollIntoView();">next slide</a>
+                <a class="bottom" onclick="var element = document.getElementById('project2slide1'); element.scrollIntoView();">next project</a>
             </div>
             <div class="slide2" id="project1slide2">
                 project 1, slide 2
-                <a class="right" href="#project1slide3">next slide</a>
-                <a class="bottom" href="#project2slide1">next project</a>
-                <a class="left" href="#project1slide1">previous slide</a>
+                <a class="right" onclick="var element = document.getElementById('project1slide3'); element.scrollIntoView();">next slide</a>
+                <a class="bottom" onclick="var element = document.getElementById('project2slide1'); element.scrollIntoView();">next project</a>
+                <a class="left" onclick="var element = document.getElementById('project1slide1'); element.scrollIntoView();">previous slide</a>
             </div>
             <div class="slide3" id="project1slide3">
                 project 1, slide 3
-                <a class="bottom" href="#project2slide1">next project</a>
-                <a class="left" href="#project1slide2">previous slide</a>
+                <a class="bottom" onclick="var element = document.getElementById('project2slide1'); element.scrollIntoView();">next project</a>
+                <a class="left" onclick="var element = document.getElementById('project1slide2'); element.scrollIntoView();">previous slide</a>
             </div>
         </div>
         <div class="project2">
             <div class="slide1" id="project2slide1">
                 project 2, slide 1
-                <a class="top" href="#project1slide1">previous project</a>
-                <a class="right" href="#project2slide2">next slide</a>
-                <a class="bottom" href="#project3slide1">next project</a>
+                <a class="top" onclick="var element = document.getElementById('project1slide1'); element.scrollIntoView();">previous project</a>
+                <a class="right" onclick="var element = document.getElementById('project2slide2'); element.scrollIntoView();">next slide</a>
+                <a class="bottom" onclick="var element = document.getElementById('project3slide1'); element.scrollIntoView();">next project</a>
             </div>
             <div class="slide2" id="project2slide2">
                 project 2, slide 2
-                <a class="top" href="#project1slide1">previous project</a>
-                <a class="right" href="#project2slide3">next slide</a>
-                <a class="bottom" href="#project3slide1">next project</a>
-                <a class="left" href="#project2slide1">previous slide</a>
+                <a class="top" onclick="var element = document.getElementById('project1slide1'); element.scrollIntoView();">previous project</a>
+                <a class="right" onclick="var element = document.getElementById('project2slide3'); element.scrollIntoView();">next slide</a>
+                <a class="bottom" onclick="var element = document.getElementById('project3slide1'); element.scrollIntoView();">next project</a>
+                <a class="left" onclick="var element = document.getElementById('project2slide1'); element.scrollIntoView();">previous slide</a>
             </div>
             <div class="slide3" id="project2slide3">
                 project 2, slide 3
-                <a class="top" href="#project1slide1">previous project</a>
-                <a class="bottom" href="#project3slide1">next project</a>
-                <a class="left" href="#project2slide2">previous slide</a>
+                <a class="top" onclick="var element = document.getElementById('project1slide1'); element.scrollIntoView();">previous project</a>
+                <a class="bottom" onclick="var element = document.getElementById('project3slide1'); element.scrollIntoView();">next project</a>
+                <a class="left" onclick="var element = document.getElementById('project2slide2'); element.scrollIntoView();">previous slide</a>
             </div>
         </div>
         <div class="project3">
             <div class="slide1" id="project3slide1">
                 project 3, slide 1
-                <a class="top" href="#project2slide1">previous project</a>
-                <a class="right" href="#project3slide2">next slide</a>
+                <a class="top" onclick="var element = document.getElementById('project2slide1'); element.scrollIntoView();">previous project</a>
+                <a class="right" onclick="var element = document.getElementById('project3slide2'); element.scrollIntoView();">next slide</a>
             </div>
             <div class="slide2" id="project3slide2">
                 project 3, slide 2
-                <a class="top" href="#project2slide1">previous project</a>
-                <a class="right" href="#project3slide3">next slide</a>
-                <a class="left" href="#project3slide1">previous slide</a>
+                <a class="top" onclick="var element = document.getElementById('project2slide1'); element.scrollIntoView();">previous project</a>
+                <a class="right" onclick="var element = document.getElementById('project3slide3'); element.scrollIntoView();">next slide</a>
+                <a class="left" onclick="var element = document.getElementById('project3slide1'); element.scrollIntoView();">previous slide</a>
             </div>
             <div class="slide3" id="project3slide3">
                 project 3, slide 3
-                <a class="top" href="#project2slide1">previous project</a>
-                <a class="left" href="#project3slide2">previous slide</a>
+                <a class="top" onclick="var element = document.getElementById('project2slide1'); element.scrollIntoView();">previous project</a>
+                <a class="left" onclick="var element = document.getElementById('project3slide2'); element.scrollIntoView();">previous slide</a>
             </div>
         </div>
     </div>
